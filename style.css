@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  background-color: #e3dfd2;
+  color: #000;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+header {
+  background-color: #c9c3a7;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 120px;
+  position: relative;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  opacity: 0.6;
+}
+
+/* ========================= */
+/* DROPDOWN MENU */
+/* ========================= */
+
+.dropdown {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: #e3dfd2;
+  border: 1px solid #000;
+  padding: 20px;
+  width: 200px;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+nav ul li:hover .dropdown {
+  display: flex;
+}
+
+.dropdown a {
+  font-size: 14px;
+}
+
+/* ========================= */
+/* HERO SECTION */
+/* ========================= */
+
+.hero {
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 200px;
+}
+
+.hero h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #000;
+  color: #e3dfd2;
+  padding: 14px 40px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  transition: 0.3s ease;
+}
+
+.button:hover {
+  background-color: #c9c3a7;
+  color: #000;
+}
+
+/* ========================= */
+/* PRODUCT GRID */
+/* ========================= */
+
+.section {
+  padding: 100px 120px;
+}
+
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 60px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+/* Proper image ratio container (4:5 fashion ratio) */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background-color: #c9c3a7;
+  border: 1px solid #000;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  font-size: 16px;
+}
+
+.product-card p {
+  font-size: 14px;
+}
+
+/* Hover effect */
+.product-card:hover {
+  transform: translateY(-6px);
+  transition: 0.3s ease;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer {
+  margin-top: 120px;
+  height: 120px;
+  background-color: #c9c3a7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
