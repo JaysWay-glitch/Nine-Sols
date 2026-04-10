@@ -130,6 +130,40 @@ nav ul li:hover .dropdown {
   gap: 60px;
 }
 
+/* Contact Form */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.form-group input {
+  height: 45px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  background-color: #e3dfd2;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #c9c3a7;
+  background-color: white;
+}
 /* Proper image ratio container (4:5 fashion ratio) */
 .product-card {
   display: flex;
