@@ -1,52 +1,199 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Nine Sols | Shop</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — Nine Sols</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <div class="logo">Nine Sols</div>
+  <div class="logo"><a href="index.html">NINE SOLS</a></div>
+  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="about.html">About</a>
-    <a href="cart.html">Cart</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <li><a href="men.html">Men</a></li>
+      <li><a href="women.html">Women</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li>
+        <a href="cart.html" class="cart-icon" aria-label="Cart">
+          🛒
+          <span class="cart-badge">0</span>
+        </a>
+      </li>
+    </ul>
   </nav>
 </header>
 
-<div class="product-card">
-<div class="product-image">
-<img src="images/shirts1.jpg" alt="">
-</div>
-<div class="product-name">Minimal Tees</div>
-<div class="product-price">$40</div>
-<button class="add-cart">Add to Cart</button>
-</div>
+<main>
 
-<div class="product-card">
-<div class="product-image">
-<img src="images/shirts2.jpg" alt="">
-</div>
-<div class="product-name">Classic Outfits</div>
-<div class="product-price">$65</div>
-<button class="add-cart">Add to Cart</button>
-</div>
+  <div class="page-hero">
+    <h1>All Products</h1>
+    <p>The full Nine Sols collection</p>
+  </div>
 
-<div class="product-card">
-<div class="product-image">
-<img src="images/shirts3.jpg" alt="">
-</div>
-<div class="product-name">Oversized Tee</div>
-<div class="product-price">$45</div>
-<button class="add-cart">Add to Cart</button>
-</div>
-</section>
+  <section class="section">
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="men">Men</button>
+      <button class="filter-btn" data-filter="women">Women</button>
+      <button class="filter-btn" data-filter="outerwear">Outerwear</button>
+      <button class="filter-btn" data-filter="tops">Tops</button>
+      <button class="filter-btn" data-filter="bottoms">Bottoms</button>
+    </div>
+
+    <div class="products" id="product-grid">
+
+      <div class="product-card" data-category="men tops">
+        <div class="product-image p-tee"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=500&fit=crop&crop=center&auto=format&q=80" alt="Minimal Tee" loading="lazy"></div>
+        <div class="product-name">Minimal Tee</div>
+        <div class="product-price">$40</div>
+        <button class="add-cart" data-product>Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-category="men tops">
+        <div class="product-image p-shirt"><img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=500&fit=crop&crop=center&auto=format&q=80" alt="Classic Shirt" loading="lazy"></div>
+        <div class="product-name">Classic Shirt</div>
+        <div class="product-price">$55</div>
+        <button class="add-cart" data-product>Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-category="men tops">
+        <div class="product-image p-tee"><img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=400&h=500&fit=crop&crop=center&auto=format&q=80" alt="Oversized Tee" loading="lazy"></div>
+        <div class="product-name">Oversized Tee</div>
+        <div class="product-price">$45</div>
+        <button class="add-cart" data-product>Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-category="men outerwear">
+        <div class="product-image p-jacket"><img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&h=500&fit=crop&crop=center&auto=format&q=80" alt="Street Jacket" loading="lazy"></div>
+        <div class="product-name">Street Jacket</div>
+        <div class="product-price">$120</div>
+        <button class="add-cart" data-product>Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-category="men outerwear">
+        <div class="product-image p-jacket"><img src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=400&h=500&fit=crop&crop=center&auto=format&q=80" alt="Utility Jacket" loading="lazy"></div>
+        <div class="product-name">Utility Jacket</div>
+        <div class="product-price">$150</div>
+        <button class="add-cart" data-product>Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-category="men tops">
+        <div class="product-image p-hoodie"><img src="https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=400&h=500&fit=crop&crop=center&auto=format&q=80" alt="Essential Hoodie" loading="lazy"></div>
+        <div class="product-name">Essential Hoodie</div>
+        <div class="product-price">$90</div>
+        <button class="add-cart" data-product>Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-category="men tops">
+        <div class="product-image p-shirt"><img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400&h=500&fit=crop&crop=center&auto=format&q=80" alt="Heavyweight Tee" loading="lazy"></div>
+        <div class="product-name">Heavyweight Tee</div>
+        <div class="product-price">$60</div>
+        <button class="add-cart" data-product>Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-category="men bottoms">
+        <div class="product-image p-pants"><img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&h=500&fit=crop&crop=center&auto=format&q=80" alt="Relaxed Trousers" loading="lazy"></div>
+        <div class="product-name">Relaxed Trousers</div>
+        <div class="product-price">$85</div>
+        <button class="add-cart" data-product>Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-category="women tops">
+        <div class="product-image p-sweater"><img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&h=500&fit=crop&crop=center&auto=format&q=80" alt="Classic Knit Sweater" loading="lazy"></div>
+        <div class="product-name">Classic Knit Sweater</div>
+        <div class="product-price">$78</div>
+        <button class="add-cart" data-product>Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-category="women tops">
+        <div class="product-image p-cardigan"><img src="https://images.unsplash.com/photo-1614975059251-992f11792b9f?w=400&h=500&fit=crop&crop=center&auto=format&q=80" alt="Everyday Cardigan" loading="lazy"></div>
+        <div class="product-name">Everyday Cardigan</div>
+        <div class="product-price">$82</div>
+        <button class="add-cart" data-product>Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-category="women tops bottoms">
+        <div class="product-image p-lounge"><img src="https://images.unsplash.com/photo-1554568083-0e17e3a36eda?w=400&h=500&fit=crop&crop=center&auto=format&q=80" alt="Neutral Lounge Set" loading="lazy"></div>
+        <div class="product-name">Neutral Lounge Set</div>
+        <div class="product-price">$95</div>
+        <button class="add-cart" data-product>Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-category="women outerwear">
+        <div class="product-image p-jacket"><img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=400&h=500&fit=crop&crop=center&auto=format&q=80" alt="Linen Trench" loading="lazy"></div>
+        <div class="product-name">Linen Trench</div>
+        <div class="product-price">$135</div>
+        <button class="add-cart" data-product>Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-category="women tops">
+        <div class="product-image p-tee"><img src="https://images.unsplash.com/photo-1485231183945-fffde7cc051e?w=400&h=500&fit=crop&crop=center&auto=format&q=80" alt="Relaxed Tank" loading="lazy"></div>
+        <div class="product-name">Relaxed Tank</div>
+        <div class="product-price">$35</div>
+        <button class="add-cart" data-product>Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-category="women bottoms">
+        <div class="product-image p-pants"><img src="https://images.unsplash.com/photo-1548624313-0396c75e4b1a?w=400&h=500&fit=crop&crop=center&auto=format&q=80" alt="Wide Leg Pant" loading="lazy"></div>
+        <div class="product-name">Wide Leg Pant</div>
+        <div class="product-price">$88</div>
+        <button class="add-cart" data-product>Add to Cart</button>
+      </div>
+
+    </div>
+  </section>
+
+</main>
 
 <footer>
-  © 2026 Nine Sols
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">NINE SOLS</div>
+      <p>Minimal, comfortable pieces designed for everyday living.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="shop.html">All Products</a>
+      <a href="men.html">Men</a>
+      <a href="women.html">Women</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:NineSols@gmail.com">NineSols@gmail.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nine Sols. All rights reserved.</span>
+    <span>Minimal by design.</span>
+  </div>
 </footer>
 
+<script src="cart.js"></script>
+<script>
+  // Filter logic
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.product-card').forEach(card => {
+        const cats = card.dataset.category || '';
+        card.style.display = (filter === 'all' || cats.includes(filter)) ? '' : 'none';
+      });
+    });
+  });
+</script>
 </body>
 </html>

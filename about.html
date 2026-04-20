@@ -1,67 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Contact | Nine Sols</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>About — Nine Sols</title>
   <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 
 <header>
-  <div class="logo">Nine Sols</div>
+  <div class="logo"><a href="index.html">NINE SOLS</a></div>
+  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="about.html">About</a>
-    <a href="cart.html">Cart</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="men.html">Men</a></li>
+      <li><a href="women.html">Women</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li>
+        <a href="cart.html" class="cart-icon" aria-label="Cart">
+          🛒
+          <span class="cart-badge">0</span>
+        </a>
+      </li>
+    </ul>
   </nav>
 </header>
-<section class="section">
-  <h2>About Nine Sols</h2>
-  <p>
-    Nine Sols creates minimal, comfortable pieces designed for everyday living.
-    We focus on timeless design, neutral tones, and thoughtful craftsmanship.
-  </p>
-  <h2>Contact Us</h2>
-  <p>Email: NineSols@gmail.com</p>
-  <p>Instagram: @Nine Sols</p>
-</section>
-<div class="container">
 
-<h1 class="page-title">Contact Us</h1>
+<main>
 
-<form class="contact-form">
-
-  <div class="form-group">
-    <label>Name</label>
-    <input type="text" placeholder="Enter your name">
+  <div class="page-hero">
+    <h1>About Nine Sols</h1>
+    <p>Why we make what we make</p>
   </div>
 
-  <div class="form-group">
-    <label>Phone Number</label>
-    <input type="tel" placeholder="Enter your phone number">
-  </div>
+  <section class="section">
+    <div class="about-grid">
 
-  <div class="form-group">
-    <label>Email</label>
-    <input type="email" placeholder="Enter your email">
-  </div>
+      <div class="about-visual"></div>
 
-  <div class="form-group">
-    <label>Order #</label>
-    <input type="text" placeholder="Enter your order number">
-  </div>
+      <div class="about-text">
+        <h2>Built for<br>everyday life.</h2>
+        <p>
+          Nine Sols was founded on a simple belief: clothing should get out of your way.
+          Too much of fashion demands your attention — loud logos, trend-driven shapes, fabrics
+          that don't hold up. We set out to do the opposite.
+        </p>
+        <p>
+          Every piece in the collection is designed around longevity. We use neutral tones that
+          work across seasons, cuts that flatter without forcing, and materials chosen to soften
+          and improve with every wash.
+        </p>
+        <p>
+          The name comes from an old idea — that nine suns once hung in the sky before one was
+          chosen. We think of our pieces the same way: refined through selection, built to endure.
+        </p>
 
-  <button type="submit" class="button">Submit</button>
+        <div class="about-values">
+          <div class="value-item">
+            <strong>Timeless Design</strong>
+            <span>No trends. Pieces that look right in five years as they do today.</span>
+          </div>
+          <div class="value-item">
+            <strong>Neutral Palette</strong>
+            <span>Tones that mix, layer, and wear across every context.</span>
+          </div>
+          <div class="value-item">
+            <strong>Quality First</strong>
+            <span>Materials and construction that reward long-term use.</span>
+          </div>
+          <div class="value-item">
+            <strong>Minimal Branding</strong>
+            <span>The clothes speak — we stay quiet.</span>
+          </div>
+        </div>
+      </div>
 
-</form>
+    </div>
+  </section>
 
-</div>
+</main>
+
 <footer>
-  © 2026 Nine Sols
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">NINE SOLS</div>
+      <p>Minimal, comfortable pieces designed for everyday living.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="shop.html">All Products</a>
+      <a href="men.html">Men</a>
+      <a href="women.html">Women</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:NineSols@gmail.com">NineSols@gmail.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nine Sols. All rights reserved.</span>
+    <span>Minimal by design.</span>
+  </div>
 </footer>
 
+<script src="cart.js"></script>
 </body>
 </html>

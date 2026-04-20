@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Nine Sols</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo"><a href="index.html">NINE SOLS</a></div>
+  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="men.html">Men</a></li>
+      <li><a href="women.html">Women</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li>
+        <a href="cart.html" class="cart-icon" aria-label="Cart">
+          🛒
+          <span class="cart-badge">0</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <div class="page-hero">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you</p>
+  </div>
+
+  <section class="section">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <h3>Get in touch</h3>
+        <p>
+          Have a question about an order, sizing, or just want to say hello?
+          Send us a message and we'll get back to you within 24 hours.
+        </p>
+        <p><strong>Email</strong><br>NineSols@gmail.com</p>
+        <p><strong>Instagram</strong><br>@NineSols</p>
+        <p><strong>Hours</strong><br>Mon – Fri, 9am – 6pm EST</p>
+        <div class="contact-social">
+          <a href="mailto:NineSols@gmail.com">Email Us</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+
+      <div>
+        <div id="contact-form-wrap">
+          <div class="form-group">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" placeholder="Your name" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" placeholder="your@email.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Subject</label>
+            <select id="contact-subject">
+              <option value="">Select a topic...</option>
+              <option>Order question</option>
+              <option>Returns &amp; exchanges</option>
+              <option>Sizing help</option>
+              <option>General enquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" placeholder="How can we help?"></textarea>
+          </div>
+          <p id="contact-error" style="font-size:12px;color:#b34a2e;margin-bottom:12px;display:none;"></p>
+          <button class="btn btn-dark" id="contact-submit">Send Message</button>
+        </div>
+
+        <div class="form-success" id="contact-success">
+          ✓ &nbsp; Thanks for reaching out — we'll be in touch within 24 hours.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">NINE SOLS</div>
+      <p>Minimal, comfortable pieces designed for everyday living.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="shop.html">All Products</a>
+      <a href="men.html">Men</a>
+      <a href="women.html">Women</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:NineSols@gmail.com">NineSols@gmail.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nine Sols. All rights reserved.</span>
+    <span>Minimal by design.</span>
+  </div>
+</footer>
+
+<script src="cart.js"></script>
+<script>
+  document.getElementById('contact-submit').addEventListener('click', () => {
+    const name    = document.getElementById('contact-name').value.trim();
+    const email   = document.getElementById('contact-email').value.trim();
+    const subject = document.getElementById('contact-subject').value;
+    const message = document.getElementById('contact-message').value.trim();
+    const err     = document.getElementById('contact-error');
+
+    if (!name || !email || !subject || !message) {
+      err.textContent = 'Please fill in all fields.';
+      err.style.display = 'block';
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      err.textContent = 'Please enter a valid email address.';
+      err.style.display = 'block';
+      return;
+    }
+    err.style.display = 'none';
+    document.getElementById('contact-form-wrap').style.display = 'none';
+    const success = document.getElementById('contact-success');
+    success.style.display = 'block';
+  });
+</script>
+</body>
+</html>

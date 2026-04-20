@@ -1,30 +1,266 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Nine Sols | Cart</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart — Nine Sols</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <div class="logo">Nine Sols</div>
+  <div class="logo"><a href="index.html">NINE SOLS</a></div>
+  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="cart.html">Cart</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="men.html">Men</a></li>
+      <li><a href="women.html">Women</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li>
+        <a href="cart.html" class="cart-icon active" aria-label="Cart">
+          🛒
+          <span class="cart-badge">0</span>
+        </a>
+      </li>
+    </ul>
   </nav>
 </header>
 
-<section class="section">
-  <h2>Your Cart</h2>
-  <p>No items added yet.</p>
-</section>
+<main>
+
+  <div class="page-hero">
+    <h1>Your Cart</h1>
+  </div>
+
+  <section class="section">
+
+    <!-- Empty state -->
+    <div id="cart-empty" class="cart-empty" style="display:none;">
+      <p>Your cart is empty.</p>
+      <a href="shop.html" class="btn btn-dark">Continue Shopping</a>
+    </div>
+
+    <!-- Cart with items -->
+    <div id="cart-full" class="cart-layout" style="display:none;">
+
+      <div>
+        <div class="cart-items" id="cart-items-list"></div>
+        <div style="margin-top:24px;">
+          <a href="shop.html" style="font-size:12px;letter-spacing:1px;border-bottom:1px solid #111;padding-bottom:2px;">← Continue Shopping</a>
+        </div>
+      </div>
+
+      <div class="cart-summary" id="cart-summary-panel">
+
+        <!-- Summary view -->
+        <div id="summary-view">
+          <h3>Order Summary</h3>
+          <div id="summary-rows"></div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="cart-total">$0</span>
+          </div>
+          <button class="btn btn-dark checkout-btn" id="checkout-btn">Checkout</button>
+        </div>
+
+        <!-- Checkout form -->
+        <div id="checkout-form-panel" style="display:none;">
+          <h3>Checkout</h3>
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="co-name" placeholder="Jane Doe" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="co-email" placeholder="jane@email.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <input type="text" id="co-address" placeholder="123 Main St" autocomplete="street-address">
+          </div>
+          <div class="form-group">
+            <label>City</label>
+            <input type="text" id="co-city" placeholder="New York" autocomplete="address-level2">
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div class="form-group">
+              <label>State</label>
+              <input type="text" id="co-state" placeholder="NY" maxlength="2">
+            </div>
+            <div class="form-group">
+              <label>ZIP</label>
+              <input type="text" id="co-zip" placeholder="10001" maxlength="10">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Card Number</label>
+            <input type="text" id="co-card" placeholder="•••• •••• •••• ••••" maxlength="19">
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div class="form-group">
+              <label>Expiry</label>
+              <input type="text" id="co-expiry" placeholder="MM/YY" maxlength="5">
+            </div>
+            <div class="form-group">
+              <label>CVV</label>
+              <input type="text" id="co-cvv" placeholder="•••" maxlength="4">
+            </div>
+          </div>
+          <p id="co-error" style="font-size:12px;color:#b34a2e;margin-bottom:12px;display:none;"></p>
+          <button class="btn btn-dark" style="width:100%;" id="place-order-btn">Place Order</button>
+          <button class="btn btn-outline" style="width:100%;margin-top:10px;" id="back-to-summary-btn">Back</button>
+        </div>
+
+        <!-- Order success -->
+        <div class="order-success" id="order-success">
+          <div class="check">✓</div>
+          <h3>Order placed!</h3>
+          <p>Thank you for your purchase.<br>A confirmation will be sent to your email.</p>
+          <a href="shop.html" class="btn btn-dark" style="margin-top:24px;">Continue Shopping</a>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+</main>
 
 <footer>
-  © 2026 Nine Sols
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">NINE SOLS</div>
+      <p>Minimal, comfortable pieces designed for everyday living.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="shop.html">All Products</a>
+      <a href="men.html">Men</a>
+      <a href="women.html">Women</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:NineSols@gmail.com">NineSols@gmail.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nine Sols. All rights reserved.</span>
+    <span>Minimal by design.</span>
+  </div>
 </footer>
 
+<script src="cart.js"></script>
+<script>
+  // ── Render cart ──────────────────────────────────────────────────────────
+  function renderCart() {
+    const cart = getCart();
+    const emptyEl   = document.getElementById('cart-empty');
+    const fullEl    = document.getElementById('cart-full');
+    const listEl    = document.getElementById('cart-items-list');
+    const rowsEl    = document.getElementById('summary-rows');
+    const totalEl   = document.getElementById('cart-total');
+
+    if (cart.length === 0) {
+      emptyEl.style.display = 'block';
+      fullEl.style.display  = 'none';
+      return;
+    }
+
+    emptyEl.style.display = 'none';
+    fullEl.style.display  = 'grid';
+
+    // Cart rows
+    listEl.innerHTML = cart.map(item => `
+      <div class="cart-row">
+        <div class="cart-thumb"></div>
+        <div class="cart-row-info">
+          <div class="cart-row-name">${item.name}</div>
+          <div class="cart-row-price">$${item.price.toFixed(2)}</div>
+          <div class="qty-control">
+            <button class="qty-btn" onclick="updateQty('${item.name}', -1)">−</button>
+            <span class="qty-value">${item.qty}</span>
+            <button class="qty-btn" onclick="updateQty('${item.name}', 1)">+</button>
+          </div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;">
+          <div style="font-size:13px;font-weight:500;">$${(item.price * item.qty).toFixed(2)}</div>
+          <button class="cart-row-remove" onclick="removeFromCart('${item.name}')" aria-label="Remove">×</button>
+        </div>
+      </div>
+    `).join('');
+
+    // Summary rows
+    rowsEl.innerHTML = cart.map(item => `
+      <div class="summary-row">
+        <span>${item.name} × ${item.qty}</span>
+        <span>$${(item.price * item.qty).toFixed(2)}</span>
+      </div>
+    `).join('');
+
+    const shipping = cartTotal() >= 100 ? 0 : 8;
+    rowsEl.innerHTML += `<div class="summary-row"><span>Shipping</span><span>${shipping === 0 ? 'Free' : '$' + shipping.toFixed(2)}</span></div>`;
+    totalEl.textContent = '$' + (cartTotal() + shipping).toFixed(2);
+  }
+
+  // ── Checkout flow ────────────────────────────────────────────────────────
+  document.getElementById('checkout-btn').addEventListener('click', () => {
+    document.getElementById('summary-view').style.display       = 'none';
+    document.getElementById('checkout-form-panel').style.display = 'block';
+  });
+
+  document.getElementById('back-to-summary-btn').addEventListener('click', () => {
+    document.getElementById('checkout-form-panel').style.display = 'none';
+    document.getElementById('summary-view').style.display        = 'block';
+    document.getElementById('co-error').style.display            = 'none';
+  });
+
+  // Format card number
+  document.getElementById('co-card').addEventListener('input', e => {
+    e.target.value = e.target.value.replace(/\D/g, '').replace(/(.{4})/g, '$1 ').trim().slice(0, 19);
+  });
+
+  // Format expiry
+  document.getElementById('co-expiry').addEventListener('input', e => {
+    let v = e.target.value.replace(/\D/g, '');
+    if (v.length >= 3) v = v.slice(0,2) + '/' + v.slice(2);
+    e.target.value = v.slice(0, 5);
+  });
+
+  document.getElementById('place-order-btn').addEventListener('click', () => {
+    const fields = ['co-name','co-email','co-address','co-city','co-state','co-zip','co-card','co-expiry','co-cvv'];
+    const err = document.getElementById('co-error');
+    for (const id of fields) {
+      if (!document.getElementById(id).value.trim()) {
+        err.textContent = 'Please fill in all fields.';
+        err.style.display = 'block';
+        return;
+      }
+    }
+    const email = document.getElementById('co-email').value;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      err.textContent = 'Please enter a valid email address.';
+      err.style.display = 'block';
+      return;
+    }
+    err.style.display = 'none';
+    // Clear cart and show success
+    saveCart([]);
+    document.getElementById('checkout-form-panel').style.display = 'none';
+    document.getElementById('order-success').style.display       = 'flex';
+    document.getElementById('order-success').style.flexDirection = 'column';
+    document.getElementById('order-success').style.alignItems    = 'center';
+  });
+
+  // Init
+  renderCart();
+</script>
 </body>
 </html>
